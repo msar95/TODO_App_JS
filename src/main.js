@@ -8,15 +8,25 @@ form.addEventListener("submit", (e) => {
     console.log("clicked btn");
 
     formValidation();
-    acceptData();
-    createPostHTML();
-})
+
+});
+
+let validateToDo = (data) => {
+    const regex = /[a-zA-Z0-9]{3,}/;
+    const check = (regex.test(data)) ?  false : true;
+    return check;
+};
 
 let formValidation = () => {
+    
     if (input.value === "") {
         msg.innerHTML = "To-Do input cannot be empty";
+    } else if (validateToDo(input.value)) {
+        msg.innerHTML = "To-Do is not accepted"
     } else {
         msg.innerHTML = "";
+        acceptData();
+        createPostHTML();
     }
 };
 
@@ -28,8 +38,8 @@ let acceptData = () => {
 }
 
 let createPostHTML = () => {
-    const boilerPlate = 
-    `<div>
+    const boilerPlate =
+        `<div>
         <p>${data.text}</p>
         <span class="options">
             <i onClick="editPost(this)" class="fas fa-edit"></i>

@@ -28,12 +28,18 @@ let acceptData = () => {
 }
 
 let createPostHTML = () => {
-    const boilerPlate = `<div>
-    <p>${data.text}</p>
-    <span class="options">
-        <i class="fas fa-edit"></i>
-        <i class="fas fa-trash-alt"></i>
-    </span>
-</div>`
+    const boilerPlate = 
+    `<div>
+        <p>${data.text}</p>
+        <span class="options">
+            <i class="fas fa-edit"></i>
+            <i onClick="deletePost(this)" class="fas fa-trash-alt"></i>
+        </span>
+    </div>`
     posts.innerHTML += boilerPlate;
+    input.value = "";
+}
+
+let deletePost = (e) => {
+    e.parentElement.parentElement.remove();
 }

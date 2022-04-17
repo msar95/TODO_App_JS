@@ -13,12 +13,11 @@ form.addEventListener("submit", (e) => {
 
 let validateToDo = (data) => {
     const regex = /[a-zA-Z0-9]{3,}/;
-    const check = (regex.test(data)) ?  false : true;
+    const check = (regex.test(data)) ? false : true;
     return check;
 };
 
 let formValidation = () => {
-    
     if (input.value === "") {
         msg.innerHTML = "To-Do input cannot be empty";
     } else if (validateToDo(input.value)) {

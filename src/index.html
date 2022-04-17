@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+</head>
+
+<body>
+    <h1>To-Do-List</h1>
+    <div class="container">
+        <div class="left">
+            <form id="form">
+                <label for="posts" id="label">Enter your To-Do here</label>
+                <br><br>
+                <textarea name="posts" id="input" cols="30" rows="10"></textarea>
+                <br><br>
+                <div id="msg"></div>
+                <button type="submit" id="btn">Post</button>
+            </form>
+        </div>
+        <div class="right">
+            <h2>Your To-Dos</h2>
+            <div id="posts">
+                <div>
+                    <p>To-Do example</p>
+                    <span class="options">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash-alt"></i>
+                    </span>
+                </div>
+                <div>
+                    <p>To-Do example</p>
+                    <span class="options">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash-alt"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -8,12 +8,32 @@ form.addEventListener("submit", (e) => {
     console.log("clicked btn");
 
     formValidation();
+    acceptData();
+    createPostHTML();
 })
 
 let formValidation = () => {
     if (input.value === "") {
-        msg.innerHTML = "To-Do darf nicht leer sein";
+        msg.innerHTML = "To-Do input cannot be empty";
     } else {
         msg.innerHTML = "";
     }
 };
+
+let data = {};
+
+let acceptData = () => {
+    data["text"] = input.value;
+    console.log(data)
+}
+
+let createPostHTML = () => {
+    const boilerPlate = `<div>
+    <p>${data.text}</p>
+    <span class="options">
+        <i class="fas fa-edit"></i>
+        <i class="fas fa-trash-alt"></i>
+    </span>
+</div>`
+    posts.innerHTML += boilerPlate;
+}
